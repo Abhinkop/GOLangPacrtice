@@ -1,6 +1,7 @@
 package main
 
 // An App that currently filters out only Soccer news fron the "Washington Post"
+// Adding somthing still in learning
 import (
 	"encoding/xml"
 	"fmt"
