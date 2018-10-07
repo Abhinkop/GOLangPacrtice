@@ -1,0 +1,6 @@
+<h1>My News</h1>
+{{ range $Title, $NewsMap := .}}
+<h1><a href="{{ $NewsMap.Location}}">{{ $Title }}<a></h1>
+<p>{{ $NewsMap.Keywords }}</p>
+{{ end}}
+<p>End</p>
