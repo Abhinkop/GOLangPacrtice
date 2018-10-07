@@ -1,0 +1,523 @@
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ ls
+BasicTemplate.html    GoRoutinesDeferPanicRecovery.go  news.go
+ChannelsBuffering.go  gotuts.go                        webmag/
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ git --version
+git version 2.16.1.windows.4
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ git config --global user.name "Abhinkop"
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ git config --global user.email "abhinjose@live.com"
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ git help config
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ git config --get
+error: wrong number of arguments
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial
+$ cd NewsAppWithGOLang/
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang
+$ ls -la
+total 9
+drwxr-xr-x 1 Abhin P Jose 197121    0 Oct  7 20:09 ./
+drwxr-xr-x 1 Abhin P Jose 197121    0 Oct  7 20:09 ../
+-rw-r--r-- 1 Abhin P Jose 197121  163 Sep 23 21:20 BasicTemplate.html
+-rw-r--r-- 1 Abhin P Jose 197121 2286 Oct  7 17:10 news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang
+$ git init
+Initialized empty Git repository in C:/Go tutorial/NewsAppWithGOLang/.git/
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ ls -la
+total 17
+drwxr-xr-x 1 Abhin P Jose 197121    0 Oct  7 20:11 ./
+drwxr-xr-x 1 Abhin P Jose 197121    0 Oct  7 20:09 ../
+drwxr-xr-x 1 Abhin P Jose 197121    0 Oct  7 20:11 .git/
+-rw-r--r-- 1 Abhin P Jose 197121  163 Sep 23 21:20 BasicTemplate.html
+-rw-r--r-- 1 Abhin P Jose 197121 2286 Oct  7 17:10 news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        BasicTemplate.html
+        news.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ touch .gitignore
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        BasicTemplate.html
+        news.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        BasicTemplate.html
+        news.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        BasicTemplate.html
+        news.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ ls
+BasicTemplate.html  news.exe*  news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git add -A
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   BasicTemplate.html
+        new file:   news.go
+
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git -reset .gitignore
+Unknown option: -reset
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git reset .gitignore
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   BasicTemplate.html
+        new file:   news.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git add .gitignore
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   BasicTemplate.html
+        new file:   news.go
+
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git commit -m "Initial Commit"
+[master (root-commit) dfd9cf0] Initial Commit
+ 3 files changed, 115 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 BasicTemplate.html
+ create mode 100644 news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ mkkdir GOLangTutuorials
+bash: mkkdir: command not found
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ mkdir GOLangTutuorials
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ ls
+BasicTemplate.html  GOLangTutuorials/  news.exe*  news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ cd GOLangTutuorials/
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang/GOLangTutuorials (master)
+$ git clone https://github.com/Abhinkop/GOLangPacrtice.git .
+Cloning into '.'...
+warning: You appear to have cloned an empty repository.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang/GOLangTutuorials (master)
+$ cd ..
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ ls
+BasicTemplate.html  news.exe*  news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git remote add origin https://github.com/Abhinkop/GOLangPacrtice.git
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.30 KiB | 663.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Abhinkop/GOLangPacrtice/pull/new/master
+remote:
+To https://github.com/Abhinkop/GOLangPacrtice.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git diff
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git diff
+diff --git a/news.go b/news.go
+index db04b19..3480c29 100644
+--- a/news.go
++++ b/news.go
+@@ -1,5 +1,6 @@
+ package main
+
++// An App that currently filters out only Soccer news fron the "Washington Post"
+ import (
+        "encoding/xml"
+        "fmt"
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git commit -m "Added a comment. Just checking i'm learning git"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+        modified:   news.go
+
+no changes added to commit
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git commit -m "Added a comment. Just checking i'm learning git"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+        modified:   news.go
+
+no changes added to commit
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   news.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git add -A
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   news.go
+
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git commit -m "Added a comment. Just checking i'm learning git"
+[master 714ce04] Added a comment. Just checking i'm learning git
+ 1 file changed, 1 insertion(+)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git diff
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git pull origin master
+From https://github.com/Abhinkop/GOLangPacrtice
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 392 bytes | 392.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Abhinkop/GOLangPacrtice.git
+   dfd9cf0..714ce04  master -> master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ ls
+BasicTemplate.html  news.exe*  news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git brach Daily-Mail-Addition
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch Daily-Mail-Addition
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch
+  Daily-Mail-Addition
+* master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git checkout Daily-Mail-Addition
+Switched to branch 'Daily-Mail-Addition'
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git branch
+* Daily-Mail-Addition
+  master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git diff
+diff --git a/news.go b/news.go
+index 3480c29..f12eef7 100644
+--- a/news.go
++++ b/news.go
+@@ -1,6 +1,7 @@
+ package main
+
+ // An App that currently filters out only Soccer news fron the "Washington Post"
++// Adding somthing still in learning
+ import (
+        "encoding/xml"
+        "fmt"
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git status
+On branch Daily-Mail-Addition
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   news.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git add news.go
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git commit -m "Still in learning"
+[Daily-Mail-Addition 7cd763a] Still in learning
+ 1 file changed, 1 insertion(+)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git push -u origin Daily-Mail-Addition
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 317 bytes | 317.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'Daily-Mail-Addition' on GitHub by visiting:
+remote:      https://github.com/Abhinkop/GOLangPacrtice/pull/new/Daily-Mail-Addition
+remote:
+To https://github.com/Abhinkop/GOLangPacrtice.git
+ * [new branch]      Daily-Mail-Addition -> Daily-Mail-Addition
+Branch 'Daily-Mail-Addition' set up to track remote branch 'Daily-Mail-Addition' from 'origin'.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git branch -a
+* Daily-Mail-Addition
+  master
+  remotes/origin/Daily-Mail-Addition
+  remotes/origin/master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (Daily-Mail-Addition)
+$ git  checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git pull origin master
+From https://github.com/Abhinkop/GOLangPacrtice
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branched --merged
+git: 'branched' is not a git command. See 'git --help'.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch --merged
+* master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git merge Daily-Mail-Addition
+Updating 714ce04..7cd763a
+Fast-forward
+ news.go | 1 +
+ 1 file changed, 1 insertion(+)
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/Abhinkop/GOLangPacrtice.git
+   714ce04..7cd763a  master -> master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branched --merged
+git: 'branched' is not a git command. See 'git --help'.
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch --merged
+  Daily-Mail-Addition
+* master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch -d ^C
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch -d Daily-Mail-Addition
+Deleted branch Daily-Mail-Addition (was 7cd763a).
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git branch -a
+* master
+  remotes/origin/Daily-Mail-Addition
+  remotes/origin/master
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$ git push origin --delete Daily-Mail-Addition
+To https://github.com/Abhinkop/GOLangPacrtice.git
+ - [deleted]         Daily-Mail-Addition
+
+Abhin P Jose@DESKTOP-A16T4TB MINGW64 /c/Go tutorial/NewsAppWithGOLang (master)
+$
